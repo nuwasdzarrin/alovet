@@ -3,14 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_AllData extends CI_Model {
 	
-	var $tbl = 'customers';
+	var $tbl = 'articels';
 	//var $tabel = 'dt_control';
 
 	public function all(){
-		$data=$this->db->select('customers.id, id_cus, name_cus, bulan, intime, meter_seb, meter_cus, meter_hasil,
-						 harga, name')
+		$data=$this->db->select('*')
 						->from($this->tbl)
-						->join('users', 'customers.petugas = users.id')
+						->join('users', 'articels.writer = users.no')
 						->get();
 		return $data;
 	}

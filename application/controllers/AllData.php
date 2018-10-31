@@ -5,15 +5,13 @@ date_default_timezone_set('Asia/Jakarta');
 class AllData extends CI_Controller {
  function __construct(){
    parent::__construct();
-   $this->simple_login->cek_login();
-   $this->simple_login->cek_admin();
+   $this->lib_login->cek_login();
+   /*$this->lib_login->cek_admin();*/
    $this->load->model('M_AllData');
  }
 
      //Load All Table Page
  public function index() {
-  $dat = date('F Y');
-  $data['updat'] = $this->M_AllData->updated($dat);
   $data['alldt'] = $this->M_AllData->all();
   $this->template->load('v_static','v_alldata', $data);
 }

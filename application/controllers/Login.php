@@ -6,7 +6,7 @@
      public function index() {
  
          // Fungsi Login
-        $this->simple_login->cek_logout();
+        $this->lib_login->cek_logout();
          $valid = $this->form_validation;
          $email = $this->input->post('email');
          $password = $this->input->post('password');
@@ -15,13 +15,13 @@
  
          if($valid->run()) {
             
-             $this->simple_login->login($email,$password, site_url('alldata'), site_url('login'));
+             $this->lib_login->login($email,$password, site_url('alldata'), site_url('login'));
          }
          // End fungsi login
          $this->load->view('account/v_logi');
      }
  
      public function logout(){
-         $this->simple_login->logout();
+         $this->lib_login->logout();
      }        
  }

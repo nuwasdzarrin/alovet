@@ -48,15 +48,15 @@
                         <tbody>
                             <?php foreach ($user->result() as $us) { ?>
                                 <tr>
-                                    <td><?php echo $us->id; ?></td>
-                                    <td><?php echo $us->name;?></td>
+                                    <td><?php echo $us->no; ?></td>
+                                    <td><?php echo $us->username;?></td>
                                     <td class="center"><?php echo $us->email;?></td>
                                     <td class="center"><?php echo $us->password;?></td>
-                                    <td class="center"><?php echo $us->role;?></td>
+                                    <td class="center"><?php echo $us->status;?></td>
                                     <td class="center">
-                                        <button class="edit-user btn btn-info fa fa-edit" data-id="<?php echo $us->id;?>" data-username="<?php echo $us->name;?>" data-email="<?php echo $us->email;?>" data-role="<?php echo $us->role;?>" data-pass="" title="Edit User"> </button>
+                                        <button class="edit-user btn btn-info fa fa-edit" data-id="<?php echo $us->no;?>" data-username="<?php echo $us->username;?>" data-email="<?php echo $us->email;?>" data-role="" data-pass="" title="Edit User"> </button>
                                         <form method="POST" action="<?php echo site_url('user/delet')?>">
-                                            <input type="hidden" name="id" value="<?php echo $us->id;?>">
+                                            <input type="hidden" name="id" value="<?php echo $us->no;?>">
                                             <button type="submit" title="Hapus Data" class="btn btn-danger fa fa-trash-o" ></button>
                                         </form>
                                     </td>
@@ -74,7 +74,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Pegawai</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Users</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -85,7 +85,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-sm-6">
-                                    <label class="control-label" for="title">Nama Pegawai:</label>
+                                    <label class="control-label" for="title">Username:</label>
                                     <input type="text" class="form-control" id="name" name="name" style="width: 150px" value="<?php echo set_value('name'); ?>" required>
                                     <p> <?php echo form_error('name'); ?> </p>
                                 </div>
@@ -114,16 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <label class="control-label" for="content">Role:</label>
-                                    <label class="radio-inline"><input type="radio" name="rolea" value="MEMBER" checked>Member</label>
-                                    <label class="radio-inline"><input type="radio" name="rolea" value="ADMIN">Admin</label>
-                                </div>
-                            </div>
-                            
-                        </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>

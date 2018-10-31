@@ -8,8 +8,8 @@
        $this->load->library(array('form_validation'));
        $this->load->helper(array('url','form'));
          $this->load->model('M_account'); //call model
-         //$this->simple_login->cek_login();
-         //$this->simple_login->cek_admin();
+         //$this->lib_login->cek_login();
+         //$this->lib_login->cek_admin();
      }
      
      public function index() {
@@ -22,10 +22,10 @@
            $this->template->load('v_static','V_addUser');
        }else{
            
-           $data['name']   =    $this->input->post('name');
+           $data['username']   =    $this->input->post('name');
            $data['email']  =    $this->input->post('email');
            $data['password'] =    md5($this->input->post('password'));
-           $data['role'] =    $this->input->post('rolea');
+           $data['status'] =    1;
            
            $this->M_account->daftar($data);
            

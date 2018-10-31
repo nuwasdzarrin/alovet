@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 	function __construct(){
          parent::__construct();
-         $this->simple_login->cek_login();
-          $this->simple_login->cek_admin();
+         $this->lib_login->cek_login();
+          /*$this->lib_login->cek_admin();*/
          $this->load->model('M_account');
      }
 	public function index()

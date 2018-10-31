@@ -39,12 +39,6 @@
             <span class="nav-link-text">All Data</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="All Data">
-          <a class="nav-link" href="<?php echo site_url('tagihan')?>">
-            <i class="fa fa-fw fa-file-text"></i>
-            <span class="nav-link-text">Tagihan</span>
-          </a>
-        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
           <a class="nav-link" href="<?php echo site_url('user')?>">
             <i class="fa fa-fw fa-user"></i>
