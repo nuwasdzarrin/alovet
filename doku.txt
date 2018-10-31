@@ -1,0 +1,5 @@
+dokumentasi database
+====================
+db: exploret_pams
+user: exploret_pamsi
+pass: l7i#)WL@F_@%
